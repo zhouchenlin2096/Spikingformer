@@ -10,7 +10,7 @@ If you find this repo useful, please consider citing:
   title={Spikingformer: Spike-driven Residual Learning for Transformer-based Spiking Neural Network},
   author={Zhou, Chenlin and Yu, Liutao and Zhou, Zhaokun and Zhang, Han and Ma, Zhengyu and Zhou, Huihui and Tian, Yonghong},
   journal={arXiv preprint arXiv:2304.11954},
-  year={2023}
+  year={2023},
   url={https://arxiv.org/abs/2304.11954}
 }
 ```
