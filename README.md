@@ -18,7 +18,7 @@ url={https://openreview.net/forum?id=frE4fUwz_h}
 Our codes are based on the official imagenet example by PyTorch, pytorch-image-models by Ross Wightman and SpikingJelly by Wei Fang.
 
 <p align="center">
-<img src="https://github.com/ZK-Zhou/spikformer/blob/main/images/overview01.png">
+<img src="https://github.com/.png">
 </p>
 
 ### Requirements
