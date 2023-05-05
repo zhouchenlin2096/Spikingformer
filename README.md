@@ -6,13 +6,12 @@ Paper and code are coming soon !
 ## Reference
 If you find this repo useful, please consider citing:
 ```
-@inproceedings{
-zhou2023spikformer,
-title={Spikformer: When Spiking Neural Network Meets Transformer },
-author={Zhaokun Zhou and Yuesheng Zhu and Chao He and Yaowei Wang and Shuicheng YAN and Yonghong Tian and Li Yuan},
-booktitle={The Eleventh International Conference on Learning Representations },
-year={2023},
-url={https://openreview.net/forum?id=frE4fUwz_h}
+@article{zhou2023spikingformer,
+  title={Spikingformer: Spike-driven Residual Learning for Transformer-based Spiking Neural Network},
+  author={Zhou, Chenlin and Yu, Liutao and Zhou, Zhaokun and Zhang, Han and Ma, Zhengyu and Zhou, Huihui and Tian, Yonghong},
+  journal={arXiv preprint arXiv:2304.11954},
+  year={2023}
+  url={https://arxiv.org/abs/2304.11954}
 }
 ```
 Our codes are based on the official imagenet example by PyTorch, pytorch-image-models by Ross Wightman and SpikingJelly by Wei Fang.
