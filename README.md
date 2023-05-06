@@ -69,7 +69,22 @@ Setting hyper-parameters in cifar10.yml
 cd cifar10
 python train.py
 ```
-### Training  on cifar10DVS
+
+### Training  on cifar100
+Setting hyper-parameters in cifar100.yml
+```
+cd cifar10
+python train.py
+```
+
+### Training  on dvs128
+Setting hyper-parameters in dvs128.yml
+```
+cd dvs128
+python train.py
+```
+
+### Training  on cifar10dvs
 ```
 cd cifar10dvs
 python train.py
