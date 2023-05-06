@@ -63,28 +63,28 @@ cd imagenet
 python test.py
 ```
 
-### Training  on cifar10
+### Training  on CIFAR10
 Setting hyper-parameters in cifar10.yml
 ```
 cd cifar10
 python train.py
 ```
 
-### Training  on cifar100
+### Training  on CIFAR100
 Setting hyper-parameters in cifar100.yml
 ```
 cd cifar10
 python train.py
 ```
 
-### Training  on dvs128
+### Training  on DVS128 Gesture
 Setting hyper-parameters in dvs128.yml
 ```
 cd dvs128
 python train.py
 ```
 
-### Training  on cifar10dvs
+### Training  on CIFAR10-DVS
 ```
 cd cifar10dvs
 python train.py
