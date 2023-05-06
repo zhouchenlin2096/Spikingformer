@@ -259,15 +259,3 @@ if __name__ == '__main__':
     y = model(input)
     print(y.shape)
     print('Test Good!')
-
-
-
-
-
-
-
-
-
-
-
-
