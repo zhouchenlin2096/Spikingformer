@@ -63,7 +63,6 @@ class SpikingSelfAttention(nn.Module):
         self.proj_conv = nn.Conv1d(dim, dim, kernel_size=1, stride=1)
         self.proj_bn = nn.BatchNorm1d(dim)
 
-
     def forward(self, x):
         T, B, C, H, W = x.shape
         x = self.proj_lif(x)
