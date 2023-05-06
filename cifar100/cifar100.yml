@@ -2,7 +2,7 @@ epochs: 400
 time_step: 4
 layer: 4
 dim: 384
-num_heads: 12
+num_heads: 8
 patch_size: 4
 mlp_ratio: 4
 data_dir: /media/data/spike-transformer-network/torch/cifar100/
