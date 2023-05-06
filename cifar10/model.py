@@ -254,11 +254,6 @@ if __name__ == '__main__':
         T=4,
     ).cuda()
 
-    # print the network structure
-    # from torchinfo import summary
-    # summary(model, input_size=(32, 3, 32, 32))
-    # print('Test Good!')
-
     # print the output
     model.eval()
     y = model(input)
