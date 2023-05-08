@@ -48,9 +48,9 @@ data prepare: ImageNet with the following folder structure, you can extract imag
 | Spikingformer-8-768 | 224x224    |  66.34M     | 22.09G  | 13.68   |13.68  |
 
 <!-- 
-| Spikformer-8-384 | 224x224    |  16.81M     | 6.82G   | 12.43                |70.24  |
-| Spikformer-8-512 | 224x224    |  29.68M     | 11.09G  | 18.82                |73.38  |
-| Spikformer-8-768 | 224x224    |  66.34M     | 22.09G  | 32.07                |74.81  |
+| Spikformer-8-384 | 224x224    |  16.81M     | 6.82G   | 12.43  mJ              |70.24  |
+| Spikformer-8-512 | 224x224    |  29.68M     | 11.09G  | 18.82  mJ             |73.38  |
+| Spikformer-8-768 | 224x224    |  66.34M     | 22.09G  | 32.07  mJ             |74.81  |
 -->
 ### Training  on ImageNet
 Setting hyper-parameters in imagenet.yml
