@@ -1,5 +1,6 @@
 # Spikingformer: Spike-driven Residual Learning for Transformer-based Spiking Neural Network, [Arxiv 2023](https://arxiv.org/abs/2304.11954)
-Spikingformer is a pure event-driven transformer-based spiking neural network, with the results of 77.64% in ImageNet 2012, 80.75% in CIFAR100, 95.94% in CIFAR10, 81.4% in CIFAR10-DVS, 98.6% in DVS Guesture.
+Spikingformer is a pure event-driven transformer-based spiking neural network, achieving 75.85% top-1 accuracy on ImageNet, + 1.04% and significantly reduces energy consumption by 57.34% compared with Spikformer.
+
 
 ## Reference
 If you find this repo useful, please consider citing:
