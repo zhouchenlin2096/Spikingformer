@@ -40,11 +40,10 @@ Our codes are based on the official imagenet example by PyTorch, pytorch-image-m
 
 ## Main results on CIFAR10-DVS/DVS128
 
-| Model               | Resolution| T |  Param.     | FLOPs   |  Energy Consumption |Top-1 Acc|
-| :---:               | :---:     | :---:  | :---:       |  :---:  |  :---:              |:---: |
-| Spikingformer-8-384 | 224x224   | 4 |  16.81M     | 6.82G   | 4.69 mJ   |72.45  |
-| Spikingformer-8-512 | 224x224   | 4 |  29.68M     | 11.09G  | 7.46 mJ   |74.79  |
-| Spikingformer-8-768 | 224x224   | 4  |  66.34M     | 22.09G  | 13.68 mJ  |75.85  |
+| Model               | T      |  Param.     |  CIFAR10 DVS Top-1 Acc  | DVS 128Top-1 Acc|
+| :---:               | :---:  | :---:       | :---:                   |:---:            |
+| Spikingformer-2-256 | 10     |  2.57M      | 79.9                    | 96.2            |
+| Spikingformer-2-256 | 16     |  2.57M      | 81.3                    | 98.3            |
 
 
 ## Requirements
