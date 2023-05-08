@@ -67,13 +67,13 @@ python train.py
 
 ### Training  on DVS128 Gesture
 ```
-cd dvs128
+cd dvs128-gesture
 python train.py
 ```
 
 ### Training  on CIFAR10-DVS
 ```
-cd cifar10dvs
+cd cifar10-dvs
 python train.py
 ```
 
