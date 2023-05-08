@@ -66,7 +66,6 @@ python train.py
 ```
 
 ### Training  on DVS128 Gesture
-Setting hyper-parameters in dvs128.yml
 ```
 cd dvs128
 python train.py
