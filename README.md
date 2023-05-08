@@ -15,7 +15,7 @@ If you find this repo useful, please consider citing:
 ```
 Our codes are based on the official imagenet example by PyTorch, pytorch-image-models by Ross Wightman and SpikingJelly by Wei Fang.
 
-### Requirements
+## Requirements
 timm==0.5.4;
 cupy==10.3.1;
 pytorch==1.10.0+cu111;
