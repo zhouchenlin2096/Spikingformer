@@ -40,7 +40,7 @@ Our codes are based on the official imagenet example by PyTorch, pytorch-image-m
 
 ## Main results on CIFAR10-DVS/DVS128
 
-| Model               | T      |  Param.     |  CIFAR10 DVS Top-1 Acc  | DVS 128Top-1 Acc|
+| Model               | T      |  Param.     |  CIFAR10 DVS Top-1 Acc  | DVS 128 Top-1 Acc|
 | :---:               | :---:  | :---:       | :---:                   |:---:            |
 | Spikingformer-2-256 | 10     |  2.57M      | 79.9                    | 96.2            |
 | Spikingformer-2-256 | 16     |  2.57M      | 81.3                    | 98.3            |
