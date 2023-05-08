@@ -29,6 +29,24 @@ Our codes are based on the official imagenet example by PyTorch, pytorch-image-m
 | Spikformer-8-768 | 224x224    |  66.34M     | 22.09G  | 32.07  mJ             |74.81  |
 -->
 
+## Main results on CIFAR10/CIFAR100
+
+| Model                | T      |  Param.     | CIFAR10 Top-1 Acc |CIFAR100 Top-1 Acc|
+| :---:                | :---:  | :---:       |  :---:    |:---: |
+| Spikingformer-4-256  | 4      |  4.15M     | 94.77     |77.43  |
+| Spikingformer-2-384  | 4      |  5.76M     | 95.22     |78.34  |
+| Spikingformer-4-384  | 4      |  9.32M     | 95.61     |79.09  |
+| Spikingformer-4-384-400E  | 4      |  9.32M     | 95.81     |79.21  |
+
+## Main results on CIFAR10-DVS/DVS128
+
+| Model               | Resolution| T |  Param.     | FLOPs   |  Energy Consumption |Top-1 Acc|
+| :---:               | :---:     | :---:  | :---:       |  :---:  |  :---:              |:---: |
+| Spikingformer-8-384 | 224x224   | 4 |  16.81M     | 6.82G   | 4.69 mJ   |72.45  |
+| Spikingformer-8-512 | 224x224   | 4 |  29.68M     | 11.09G  | 7.46 mJ   |74.79  |
+| Spikingformer-8-768 | 224x224   | 4  |  66.34M     | 22.09G  | 13.68 mJ  |75.85  |
+
+
 ## Requirements
 timm==0.5.4;
 cupy==10.3.1;
