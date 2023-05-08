@@ -42,7 +42,7 @@ data prepare: ImageNet with the following folder structure, you can extract imag
 ## Main results on ImageNet-1K
 
 | Model               | Resolution | Top-1 | #Param. | FLOPs |  Energy Consumption |
-| ---------------     | ---------- | ----- | ------- | ----- |----- |
+| ---------------     | ---------- | ----- | ------- | ----- |  -----------------  |
 | Spikingformer-8-384 | 224x224    | 72.45  | 16.81M     | 6.82G   | 4.69  |
 | Spikingformer-8-512 | 224x224    | 74.79  | 29.68M     | 11.09G  | 7.46  |
 | Spikingformer-8-768 | 224x224    | 13.68  | 66.34M     | 22.09G  | 13.68 |
