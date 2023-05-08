@@ -57,12 +57,6 @@ cd imagenet
 python -m torch.distributed.launch --nproc_per_node=8 train.py
 ```
 
-### Testing ImageNet Val data 
-```
-cd imagenet
-python test.py
-```
-
 ### Training  on CIFAR10
 Setting hyper-parameters in cifar10.yml
 ```
