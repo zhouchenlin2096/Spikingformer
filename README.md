@@ -53,7 +53,7 @@ data prepare: ImageNet with the following folder structure, you can extract imag
 | Spikformer-8-768 | 224x224    |  66.34M     | 22.09G  | 32.07  mJ             |74.81  |
 -->
 
-##Train
+## Train
 ### Training  on ImageNet
 Setting hyper-parameters in imagenet.yml
 
