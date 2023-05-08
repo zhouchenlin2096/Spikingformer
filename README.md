@@ -43,7 +43,10 @@ data prepare: ImageNet with the following folder structure, you can extract imag
 
 | Model               | Resolution |  Param.     | FLOPs   |  Energy Consumption |Top-1 |
 | :---:               | :---:      | :---:       |  :---:  |  :---:              |:---: |
-| Spikingformer-8-384 | 224x224    |  16.81M     | 6.82G   | 4.69                |72.45  |
+| Spikformer-8-384 | 224x224    |  16.81M     | 6.82G   | 12.43                |72.45  |
+| Spikformer-8-512 | 224x224    |  29.68M     | 11.09G  | 18.82                |74.79  |
+| Spikformer-8-768 | 224x224    |  66.34M     | 22.09G  | 32.07               |13.68  |
+| Spikingformer-8-384 | 224x224    |  16.81M     | 6.82G   | 4.69 (-62.27%)                |72.45  |
 | Spikingformer-8-512 | 224x224    |  29.68M     | 11.09G  | 7.46                |74.79  |
 | Spikingformer-8-768 | 224x224    |  66.34M     | 22.09G  | 13.68               |13.68  |
 
