@@ -17,11 +17,11 @@ Our codes are based on the official imagenet example by PyTorch, pytorch-image-m
 
 ## Main results on ImageNet-1K
 
-| Model               | Resolution |  Param.     | FLOPs   |  Energy Consumption |Top-1 Acc|
-| :---:               | :---:      | :---:       |  :---:  |  :---:              |:---: |
-| Spikingformer-8-384 | 224x224    |  16.81M     | 6.82G   | 4.69 mJ   |72.45  |
-| Spikingformer-8-512 | 224x224    |  29.68M     | 11.09G  | 7.46 mJ   |74.79  |
-| Spikingformer-8-768 | 224x224    |  66.34M     | 22.09G  | 13.68 mJ  |75.85  |
+| Model               | Resolution| T |  Param.     | FLOPs   |  Energy Consumption |Top-1 Acc|
+| :---:               | :---:     | :---:  | :---:       |  :---:  |  :---:              |:---: |
+| Spikingformer-8-384 | 224x224   | 4 |  16.81M     | 6.82G   | 4.69 mJ   |72.45  |
+| Spikingformer-8-512 | 224x224   | 4 |  29.68M     | 11.09G  | 7.46 mJ   |74.79  |
+| Spikingformer-8-768 | 224x224   | 4  |  66.34M     | 22.09G  | 13.68 mJ  |75.85  |
 
 <!-- 
 | Spikformer-8-384 | 224x224    |  16.81M     | 6.82G   | 12.43  mJ              |70.24  |
