@@ -1,7 +1,5 @@
 # Spikingformer: Spike-driven Residual Learning for Transformer-based Spiking Neural Network, [Arxiv 2023](https://arxiv.org/abs/2304.11954)
-Spikingformer have achieved 77.64% in ImageNet 2012, 80.75% in CIFAR100, 95.94% in CIFAR10, 81.4% in CIFAR10-DVS, 98.6% in DVS Guesture, achieving the best results in all the above five datasets. 
-We have built a novel and pure spiking neural network model based on transformer, named Spikingformer, which is the state-of-the-art in directly trained SNNs models. 
-Paper and code are coming soon !
+Spikingformer is a pure event-driven transformer-based spiking neural network, with the results of 77.64% in ImageNet 2012, 80.75% in CIFAR100, 95.94% in CIFAR10, 81.4% in CIFAR10-DVS, 98.6% in DVS Guesture.
 
 ## Reference
 If you find this repo useful, please consider citing:
@@ -15,10 +13,6 @@ If you find this repo useful, please consider citing:
 }
 ```
 Our codes are based on the official imagenet example by PyTorch, pytorch-image-models by Ross Wightman and SpikingJelly by Wei Fang.
-
-<p align="center">
-<img src="https://github.com/.png">
-</p>
 
 ### Requirements
 timm==0.5.4
