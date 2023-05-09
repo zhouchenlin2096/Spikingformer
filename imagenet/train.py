@@ -369,7 +369,7 @@ def main():
 
     # train spikformer with imagenet
     model = create_model(
-        'spikformer',
+        'Spikingformer',
         pretrained=False,
         drop_rate=0.,
         drop_path_rate=0.2,
