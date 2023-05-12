@@ -47,9 +47,7 @@ Our codes are based on the official imagenet example by PyTorch, pytorch-image-m
 
 
 ## Requirements
-timm==0.6.12; cupy==11.3.0; torch==1.14.0+cu116; spikingjelly==0.0.0.0.12; pyyaml; or 
-
-timm==0.5.4; cupy==10.3.1; pytorch==1.10.0+cu111; spikingjelly==0.0.0.0.12; pyyaml;
+timm==0.6.12; cupy==11.3.0; torch==1.14.0+cu116; spikingjelly==0.0.0.0.12; pyyaml; 
 
 data prepare: ImageNet with the following folder structure, you can extract imagenet by this [script](https://gist.github.com/BIGBALLON/8a71d225eff18d88e469e6ea9b39cef4).
 ```
