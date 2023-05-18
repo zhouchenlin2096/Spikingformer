@@ -367,7 +367,7 @@ def main():
 
     random_seed(args.seed, args.rank)
 
-    # train spikformer with imagenet
+    # train spikingformer with imagenet
     model = create_model(
         'Spikingformer',
         pretrained=False,
