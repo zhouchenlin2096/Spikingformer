@@ -2,7 +2,7 @@
 Spikingformer is a pure event-driven transformer-based spiking neural network (75.85% top-1 accuracy on ImageNet, + 1.04% and significantly reduces energy consumption by 57.34% compared with Spikformer). To our best knowledge, this is the first time that a pure event-driven transformer-based SNN has been developed in in 2023/04.
 
 <p align="center">
-<img src="https://github.com/zhouchenlin2096/Spikingformer/tree/master/imgs/Spikingformer-Architecture.png">
+<img src="https://github.com/zhouchenlin2096/Spikingformer/blob/main/imgs/Spikingformer-Architecture.png">
 </p>
 
 ## Reference
