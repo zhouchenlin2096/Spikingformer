@@ -16,7 +16,6 @@ If you find this repo useful, please consider citing:
   url={https://arxiv.org/abs/2304.11954}
 }
 ```
-Our codes are based on the official imagenet example by PyTorch, pytorch-image-models by Ross Wightman and SpikingJelly by Wei Fang.
 
 ## Main results on ImageNet-1K
 
