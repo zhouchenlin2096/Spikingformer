@@ -182,11 +182,12 @@ class vit_snn(nn.Module):
                  img_size_h=128, img_size_w=128, patch_size=16, in_channels=2, num_classes=11,
                  embed_dims=[64, 128, 256], num_heads=[1, 2, 4], mlp_ratios=[4, 4, 4], qkv_bias=False, qk_scale=None,
                  drop_rate=0., attn_drop_rate=0., drop_path_rate=0., norm_layer=nn.LayerNorm,
-                 depths=[6, 8, 6], sr_ratios=[8, 4, 2], pretrained_cfg= None
+                 depths=[6, 8, 6], sr_ratios=[8, 4, 2], T = 4, pretrained_cfg= None
                  ):
         super().__init__()
         self.num_classes = num_classes
         self.depths = depths
+        self.T = T
 
         dpr = [x.item() for x in torch.linspace(0, drop_path_rate, depths)]  # stochastic depth decay rule
 
@@ -239,8 +240,7 @@ class vit_snn(nn.Module):
         return x.flatten(3).mean(3)
 
     def forward(self, x):
-        T = 4
-        x = (x.unsqueeze(0)).repeat(T, 1, 1, 1, 1)
+        x = (x.unsqueeze(0)).repeat(self.T, 1, 1, 1, 1)
         x = self.forward_features(x)
         x = self.head(x.mean(0))
         return x
@@ -249,10 +249,6 @@ class vit_snn(nn.Module):
 @register_model
 def Spikingformer(pretrained=False, **kwargs):
     model = vit_snn(
-        img_size_h=224, img_size_w=224,
-        patch_size=16, embed_dims=384, num_heads=8, mlp_ratios=4,
-        in_channels=3, num_classes=1000, qkv_bias=False,
-        norm_layer=partial(nn.LayerNorm, eps=1e-6), depths=8, sr_ratios=1,
         **kwargs
     )
     model.default_cfg = _cfg()
@@ -264,14 +260,14 @@ if __name__ == '__main__':
     x = torch.randn(2, 3, 224, 224).cuda()
     model = create_model(
         'Spikingformer',
-        pretrained=False,
-        drop_rate=0.,
-        drop_path_rate=0.2,
-        drop_block_rate=None,
+        img_size_h=224, img_size_w=224,
+        patch_size=16, embed_dims=512, num_heads=8, mlp_ratios=4,
+        in_channels=3, num_classes=1000, qkv_bias=False,
+        norm_layer=partial(nn.LayerNorm, eps=1e-6), depths=8, sr_ratios=1,
+        T = 4
     ).cuda()
 
     model.eval()
     y = model(x)
     print(y.shape)
     print('Test Good!')
-
