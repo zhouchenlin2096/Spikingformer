@@ -369,7 +369,7 @@ def main():
 
     model = create_model(
         'Spikingformer',
-        pretrained=True,
+        pretrained=False,
         drop_rate=0.,
         drop_path_rate=0.2,
         drop_block_rate=None,
