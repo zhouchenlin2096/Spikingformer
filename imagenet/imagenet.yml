@@ -1,7 +1,9 @@
 dataset: imagenet
 num_classes: 1000
 img_size: 224
+dim: 512
 patch_size: 16
+num_heads: 8
 mlp_ratio: 4
 mean:
     - 0.485
@@ -40,3 +42,4 @@ warmup_lr: 0.000001
 opt: adamw
 smoothing: 0.1
 workers: 8
+depths: 8
