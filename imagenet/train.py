@@ -97,7 +97,7 @@ parser.add_argument('--patch-size', type=int, default=None, metavar='N',
 parser.add_argument('--mlp-ratio', type=int, default=None, metavar='N',
                     help='expand ration of embedding dimension in MLP block')
 # Dataset / Model parameters
-parser.add_argument('-data-dir', metavar='DIR',default="/dataset/ImageNet2012/",
+parser.add_argument('-data-dir', metavar='DIR',default="/media/data/imagenet2012", #/dataset/ImageNet2012/
                     help='path to dataset')
 parser.add_argument('--dataset', '-d', metavar='NAME', default='imagenet',
                     help='dataset type (default: ImageFolder/ImageTar if empty)')
@@ -238,9 +238,9 @@ parser.add_argument('--drop-path', type=float, default=None, metavar='PCT',
 parser.add_argument('--drop-block', type=float, default=None, metavar='PCT',
                     help='Drop block rate (default: None)')
 
-# Batch norm parameters (only works with gen_efficientnet based models currently)
+# Batch norm parameters (only works with gen_efficientnet based model_ currently)
 parser.add_argument('--bn-tf', action='store_true', default=False,
-                    help='Use Tensorflow BatchNorm defaults for models that support it (default: False)')
+                    help='Use Tensorflow BatchNorm defaults for model_ that support it (default: False)')
 parser.add_argument('--bn-momentum', type=float, default=None,
                     help='BatchNorm momentum override (if not None)')
 parser.add_argument('--bn-eps', type=float, default=None,
@@ -367,13 +367,17 @@ def main():
 
     random_seed(args.seed, args.rank)
 
-    # train spikingformer with imagenet
     model = create_model(
         'Spikingformer',
-        pretrained=False,
+        pretrained=True,
         drop_rate=0.,
         drop_path_rate=0.2,
         drop_block_rate=None,
+        img_size_h=args.img_size, img_size_w=args.img_size,
+        patch_size=args.patch_size, embed_dims=args.dim, num_heads=args.num_heads, mlp_ratios=args.mlp_ratio,
+        in_channels=3, num_classes=args.num_classes, qkv_bias=False,
+        depths=args.depths, sr_ratios=1,
+        T=4,
     )
 
     print("Creating model")
