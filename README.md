@@ -8,6 +8,9 @@ Spikingformer is a pure event-driven transformer-based spiking neural network (*
 <img src="https://github.com/zhouchenlin2096/Spikingformer/blob/master/imgs/Spikingformer-Architecture.png">
 </p>
 
+## News
+[2022.8.18] Update trained models.
+
 ## Reference
 If you find this repo useful, please consider citing:
 ```
@@ -26,7 +29,7 @@ If you find this repo useful, please consider citing:
 | :---:               | :---:     | :---:  | :---:       |  :---:  |  :---:    |:---: |:---: |
 | Spikingformer-8-384 | 224x224   | 4 |  16.81M     | 3.88G   | 4.69 mJ   |72.45  |   -    |
 | Spikingformer-8-512 | 224x224   | 4 |  29.68M     | 6.52G  | 7.46 mJ   |74.79  |     -  |
-| Spikingformer-8-768 | 224x224   | 4  |  66.34M     | 12.54G  | 13.68 mJ  |75.85  |   [here](https://pan.baidu.com/s/1LsECpFOxh30O3vHWow8OGQ)|
+| Spikingformer-8-768 | 224x224   | 4  |  66.34M     | 12.54G  | 13.68 mJ  |75.85  |   [here](https://pan.baidu.com/s/1LsECpFOxh30O3vHWow8OGQ) |
 
 All download passwords: abcd
 
@@ -80,6 +83,13 @@ Setting hyper-parameters in imagenet.yml
 ```
 cd imagenet
 python -m torch.distributed.launch --nproc_per_node=8 train.py
+```
+
+### Testing ImageNet Val data
+Download the trained model first [here](https://pan.baidu.com/s/1LsECpFOxh30O3vHWow8OGQ).
+```
+cd imagenet
+python test.py
 ```
 
 ### Training  on CIFAR10
