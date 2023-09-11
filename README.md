@@ -43,12 +43,14 @@ All download passwords: abcd
 
 ## Main results on CIFAR10/CIFAR100
 
-| Model                | T      |  Param.     | CIFAR10 Top-1 Acc |CIFAR100 Top-1 Acc|
-| :---:                | :---:  | :---:       |  :---:    |:---: |
-| Spikingformer-4-256  | 4      |  4.15M     | 94.77     |77.43  |
-| Spikingformer-2-384  | 4      |  5.76M     | 95.22     |78.34  |
-| Spikingformer-4-384  | 4      |  9.32M     | 95.61     |79.09  |
-| Spikingformer-4-384-400E  | 4      |  9.32M     | 95.81     |79.21  |
+| Model                | T      |  Param.     | CIFAR10 Top-1 Acc| Download  |CIFAR100 Top-1 Acc|
+| :---:                | :---:  | :---:       |  :---:  |:---:   |:---: |
+| Spikingformer-4-256  | 4      |  4.15M     | 94.77   |   -   |77.43  |
+| Spikingformer-2-384  | 4      |  5.76M     | 95.22   |   -   |78.34  |
+| Spikingformer-4-384  | 4      |  9.32M     | 95.61    |   -  |79.09  |
+| Spikingformer-4-384-400E  | 4      |  9.32M     | 95.81    | [here](https://pan.baidu.com/s/1mjpD2gtz5ZX0M8N3jobjzA ) |79.21  |
+
+All download passwords: abcd
 
 ## Main results on CIFAR10-DVS/DVS128
 
