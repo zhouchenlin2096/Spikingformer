@@ -13,8 +13,7 @@ import torch.nn as nn
 from .engine import get_syops_pytorch
 from .utils import syops_to_string, params_to_string
 
-# ssa_info = {'depth': 8, 'Nheads': 8, 'embSize': 384, 'patchSize': 14, 'Tsteps': 4}  # lifconvbn-8-384
-# ssa_info = {'depth': 8, 'Nheads': 8, 'embSize': 512, 'patchSize': 14, 'Tsteps': 4}  # lifconvbn-8-512
+
 ssa_info = {'depth': 8, 'Nheads': 12, 'embSize': 768, 'patchSize': 14, 'Tsteps': 4}  # lifconvbn-8-768
 
 def get_energy_cost(model, ssa_info):
@@ -24,14 +23,7 @@ def get_energy_cost(model, ssa_info):
     Nac = 0
     Nmac = 0
     for name, module in model.named_modules():
-        # print(name, module)
-        # isinstance(model.head, nn.Linear) -> True
-        # isinstance(model.head, nn.Conv1d) -> False
-        # isinstance(model.block[7].mlp.fc1_conv, nn.Conv2d) -> True
-        # isinstance(model.block.7.mlp.fc1_conv, nn.Conv1d) -> error (invalid syntax)
-        # model.patch_embed.proj_conv2 -> Conv2d(96, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)
-        
-        # if isinstance(module, (nn.Linear, nn.Conv1d, nn.Conv2d)):  # obtain same results
+
         if "conv" in name or "head" in name:
             if 'block' in name:
                 name_split = name.split('.', 2)
@@ -43,14 +35,12 @@ def get_energy_cost(model, ssa_info):
             conv_linear_layers_info.append(tinfo)
             if abs(accumulated_syops_cost[3] - 100) < 1e-4:  # fr = 100%
                 Nmac += accumulated_syops_cost[2]
-                # Nmac += accumulated_syops_cost[0] * accumulated_syops_cost[3] / 100  # obtain same results
             else:
                 Nac += accumulated_syops_cost[1]
-                # Nac += accumulated_syops_cost[0] * accumulated_syops_cost[3] / 100  # obtain same results
     print('Info of Conv/Linear layers: ')
     for tinfo in conv_linear_layers_info:
         print(tinfo)
-                
+
     # calculate ops for SSA
     print('SSA info: \n', ssa_info)
     depth = ssa_info['depth']
@@ -61,7 +51,7 @@ def get_energy_cost(model, ssa_info):
     embSize_per_head = int(embSize/Nheads)
     SSA_Nac_base = Tsteps * Nheads * pow(patchSize, 2) * embSize_per_head * embSize_per_head
     qkv_fr = []
-    for d in range(depth):             
+    for d in range(depth):
         q_lif_r = eval(f'model.block[{d}].attn.q_lif.accumulated_syops_cost[3]') / 100
         k_lif_r = eval(f'model.block[{d}].attn.k_lif.accumulated_syops_cost[3]') / 100
         v_lif_r = eval(f'model.block[{d}].attn.v_lif.accumulated_syops_cost[3]') / 100
@@ -71,7 +61,7 @@ def get_energy_cost(model, ssa_info):
         Nac += tNac
     print('Firing rate of Q/K/V inputs in each block: ')
     print(qkv_fr)
-    
+
     # calculate energy consumption according to E_mac = 4.6 pJ (1e-12 J) and E_ac = 0.9 pJ
     Nmac = Nmac / 1e9 # G
     Nac = Nac / 1e9 # G
