@@ -1,7 +1,5 @@
 # Spikingformer: Spike-driven Residual Learning for Transformer-based Spiking Neural Network, [Arxiv 2023](https://arxiv.org/abs/2304.11954)
-Spikingformer is a pure event-driven transformer-based spiking neural network (**75.85% top-1** accuracy on ImageNet-1K, **+ 1.04%** and **significantly reduces energy consumption by 57.34%** compared with Spikformer). To our best knowledge, this is the first time that **a pure event-driven transformer-based SNN** has been developed in in 2023/04.
-
-**Note！！！** Welcome to try **the latest improved version** of Spikingformer : [Spikingformer-CML](https://github.com/zhouchenlin2096/Spikingformer-CML), which achieves the state-of-the-art performance on several datasets (eg. **78.46 % top-1** on ImageNet-1K) in directly trained SNNs .
+Spikingformer is a pure event-driven transformer-based spiking neural network (**75.85% top-1** accuracy on ImageNet-1K, **+ 1.04%** and **significantly reduces energy consumption by 57.34%** compared with Spikformer). To our best knowledge, this is the first time that **a pure event-driven transformer-based SNN** has been developed in 2023/04.
 
 
 <p align="center">
@@ -9,9 +7,9 @@ Spikingformer is a pure event-driven transformer-based spiking neural network (*
 </p>
 
 ## News
-[2022.9.11] Update origin_logs and cifar10 trained model.
+[2023.9.11] Update origin_logs and cifar10 trained model.
 
-[2022.8.18] Update trained models.
+[2023.8.18] Update trained models.
 
 ## Reference
 If you find this repo useful, please consider citing:
@@ -120,6 +118,12 @@ python train.py
 ```
 cd cifar10-dvs
 python train.py
+```
+
+### Energy Consumption Calculation on ImageNet
+```
+cd imagenet
+python energy_consumption_calculation_on_imagenet.py
 ```
 
 ## Acknowledgement & Contact Information
