@@ -1,5 +1,5 @@
 
-## Quickly Use：Energy Consumption Calculation on ImageNet
+## Get started quickly：energy consumption calculation on ImageNet
 Download the trained model first [here](https://pan.baidu.com/s/1LsECpFOxh30O3vHWow8OGQ).
 ```
 cd imagenet
