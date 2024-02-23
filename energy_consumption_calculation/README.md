@@ -1,3 +1,12 @@
+
+## Quickly Use：Energy Consumption Calculation on ImageNet
+Download the trained model first [here](https://pan.baidu.com/s/1LsECpFOxh30O3vHWow8OGQ).
+```
+cd imagenet
+python energy_consumption_calculation_on_imagenet.py
+```
+
+
 ## Usage for calculating energy consumption of Spikingformer
 
 0. Please refer to [syops-counter](https://github.com/iCGY96/syops-counter) for more information, on which this repo is based
