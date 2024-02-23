@@ -7,6 +7,8 @@ Spikingformer is a pure event-driven transformer-based spiking neural network (*
 </p>
 
 ## News
+[2024.2.23] Update energy_consumption_calculation of Spikingformer or Spikformer on Imagenet.
+
 [2023.9.11] Update origin_logs and cifar10 trained model.
 
 [2023.8.18] Update trained models.
