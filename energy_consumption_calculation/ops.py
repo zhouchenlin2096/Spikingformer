@@ -16,46 +16,24 @@ except:
 
 
 def spike_rate(inp):
-    # 改变判断前层输入是否为脉冲的方法，假定unique元素个数小于“某个整数”（一个shortcut会使得脉冲矩阵的最大值+1）
-    # Nspks_max = 30  # for spikformer-4-384, real Nspks_max is 9 (2*4+1=9)；for spikformer-8-512, real Nspks_max is 17 (2*8+1=17)；
-    Nspks_max = 1  # similar to the original version by ChenGY 只有真正全0-1矩阵才作为event-driven，计算AC，否则均计算为MAC
+
+    # Nspks_max = 30  # 例如for spikformer-8-512, real Nspks_max is 17 (2*8+1=17)；若用此计算Spikformer的能耗，则对应论文Appendix G中计算1）.
+    Nspks_max = 1  # 只有真正全0-1矩阵才作为event-driven，计算AC，否则均计算为MAC；若用此计算Spikformer的能耗，则对应论文Appendix G中计算2）.
     num = inp.unique()
-    # print(len(num))
-    if len(num) <= Nspks_max+1 and inp.max() <= Nspks_max and inp.min() >= 0: 
-        # 将[0,1,2...16]这种累积脉冲的矩阵，转化为只含有[0,1]的矩阵，把“整数*浮点数”作为一个AC
-        # inp = torch.where(inp<1.0, 0.0, 1.0)
-        
-        # calculate module.__spkhistc__ （较为耗时，且对多个batch的数据进行统计较麻烦（类似于发放率，逐个batch累加，最后求平均），因此此处仅用一个batch的测试获取此信息）
-        # https://numpy.org/doc/stable/reference/generated/numpy.histogram.html
-        # spkhistc, _ = np.histogram(np.array(inp.cpu()), bins=np.arange(21))
+
+    if len(num) <= Nspks_max+1 and inp.max() <= Nspks_max and inp.min() >= 0:
         spkhistc = None
-        
+
         spike = True
-        spike_rate = (inp.sum() / inp.numel()).item()  # 此种计算方法已计入了时长T的影响，因为inp包含T这一维度。（注意：分母也包含了T这一维度）
-        # print(len(num), spike_rate, num)
-        # print(len(num), spike_rate, num, inp.unique())
-        # print(len(num), spike_rate, num, spkhistc)
-    else: 
+        spike_rate = (inp.sum() / inp.numel()).item()
+
+    else:
         spkhistc = None
-        
+
         spike = False
         spike_rate = 1
-        # print(len(num), spike_rate, num.max())
-        # print(len(num), spike_rate, num.max(), spkhistc)
-    
+
     return spike, spike_rate, spkhistc
-
-    # # original version by ChenGY
-    # # T = inp.shape[1]
-    # num = inp.unique()
-    # if len(num) <= 2 and inp.max() <= 1 and inp.min() >= 0: 
-    #     spike = True
-    #     spike_rate = (inp.sum() / inp.numel()).item()
-    # else: 
-    #     spike = False
-    #     spike_rate = 1
-
-    # return spike, spike_rate
 
 
 def empty_syops_counter_hook(module, input, output):
@@ -71,7 +49,7 @@ def upsample_syops_counter_hook(module, input, output):
     module.__syops__[0] += int(output_elements_count)
 
     # spike, rate = spike_rate(output[0])
-    spike, rate, _ = spike_rate(output) 
+    spike, rate, _ = spike_rate(output)
 
     if spike:
         module.__syops__[1] += int(output_elements_count) * rate
@@ -85,7 +63,7 @@ def relu_syops_counter_hook(module, input, output):
     module.__syops__[0] += int(active_elements_count)
 
     # spike, rate = spike_rate(output[0])
-    spike, rate, _ = spike_rate(output) 
+    spike, rate, _ = spike_rate(output)
 
     if spike:
         module.__syops__[1] += int(active_elements_count) * rate
@@ -99,30 +77,29 @@ def IF_syops_counter_hook(module, input, output):
     module.__syops__[0] += int(active_elements_count)
 
     # spike, rate = spike_rate(output[0])
-    spike, rate, spkhistc = spike_rate(output)  
+    spike, rate, spkhistc = spike_rate(output)
     module.__syops__[1] += int(active_elements_count)
     module.__syops__[3] += rate * 100
     module.__spkhistc__ = spkhistc
 
-def LIF_syops_counter_hook(module, input, output):  # output is <class 'torch.Tensor'>
-    active_elements_count = input[0].numel()  # input is tuple, input[0].shape = torch.Size([4, 1, 48, 32, 32]) [T, B, C, H, W]
-    module.__syops__[0] += int(active_elements_count)  # 输入的元素个数作为操作数，不管是否有脉冲？似乎有问题？？ input[0].numel() = np.prod(input[0].shape)
+def LIF_syops_counter_hook(module, input, output):
+    active_elements_count = input[0].numel()
+    module.__syops__[0] += int(active_elements_count)
 
-    # spike, rate = spike_rate(output[0])  # output.shape = torch.Size([4, 1, 48, 32, 32]) [T, B, C, H, W] # 神经元层计算的是本身的发放率。但只用了第一个时间步的脉冲输入来计算发放率，代表性不足？？ 考虑使用spike, rate = spike_rate(output)。猜测作者是误认为output与input一样是tuple
-    spike, rate, spkhistc = spike_rate(output)  
+    spike, rate, spkhistc = spike_rate(output)
     module.__syops__[1] += int(active_elements_count)
     # module.__syops__[2] += int(active_elements_count)
     module.__syops__[3] += rate * 100
     module.__spkhistc__ = spkhistc
 
 def linear_syops_counter_hook(module, input, output):
-    input = input[0]  # input is tuple, input[0].shape = torch.Size([4, 64, 384]) [TB, N, C]  # output.shape = torch.Size([4, 64, 384])
-    spike, rate, spkhistc = spike_rate(input)  # 计算了前一层的发放率  # input.unique --> [0,1,2]  spike=False 不把该层作为spike-triggered
+    input = input[0]
+    spike, rate, spkhistc = spike_rate(input)
     # pytorch checks dimensions, so here we don't care much
     batch_size = input.shape[0]
     output_last_dim = output.shape[-1]
     # bias_syops = output_last_dim if module.bias is not None else 0
-    bias_syops = output_last_dim*batch_size if module.bias is not None else 0 # need to take batch_size into account, as in conv_syops_counter_hook
+    bias_syops = output_last_dim*batch_size if module.bias is not None else 0
     module.__syops__[0] += int(np.prod(input.shape) * output_last_dim + bias_syops)
     if spike:
         module.__syops__[1] += int(np.prod(input.shape) * output_last_dim + bias_syops) * rate
@@ -136,7 +113,7 @@ def linear_syops_counter_hook(module, input, output):
 def pool_syops_counter_hook(module, input, output):
     input = input[0]  # input is tuple, input[0].shape = torch.Size([4, 192, 32, 32]) [TB, C, H, W]  # output.shape = torch.Size([4, 192, 16, 16])
     spike, rate, spkhistc = spike_rate(input)
-    module.__syops__[0] += int(np.prod(input.shape)) # 直接加上元素个数，对吗？？
+    module.__syops__[0] += int(np.prod(input.shape))
 
     if spike:
         module.__syops__[1] += int(np.prod(input.shape)) * rate
@@ -158,7 +135,7 @@ def bn_syops_counter_hook(module, input, output):
         module.__syops__[1] += int(batch_syops) * rate
     else:
         module.__syops__[2] += int(batch_syops)
-    
+
     module.__syops__[3] += rate * 100
     module.__spkhistc__ = spkhistc
 
