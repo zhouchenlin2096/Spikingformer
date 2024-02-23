@@ -1,0 +1,575 @@
+/home/zhcl/anaconda3/envs/stn/bin/python /media/data/spike-transformer-network/spikingformer_github/imagenet/energy_consumption_calculation_on_imagenet.py 
+INFO:train:Training with a single process on 1 GPUs.
+Training with a single process on 1 GPUs.
+Creating model
+number of params: 66363208
+INFO:train:Model vitsnn created, param count:66363208
+Model vitsnn created, param count:66363208
+INFO:timm.data.config:Data processing configuration for current model + dataset:
+Data processing configuration for current model + dataset:
+INFO:timm.data.config:	input_size: (3, 224, 224)
+	input_size: (3, 224, 224)
+INFO:timm.data.config:	interpolation: bicubic
+	interpolation: bicubic
+INFO:timm.data.config:	mean: (0.485, 0.456, 0.406)
+	mean: (0.485, 0.456, 0.406)
+INFO:timm.data.config:	std: (0.229, 0.224, 0.225)
+	std: (0.229, 0.224, 0.225)
+INFO:timm.data.config:	crop_pct: 1.0
+	crop_pct: 1.0
+INFO:train:Using native Torch AMP. Training in mixed precision.
+Using native Torch AMP. Training in mixed precision.
+INFO:timm.models.helpers:Restoring model state from checkpoint...
+Restoring model state from checkpoint...
+INFO:timm.models.helpers:Loaded checkpoint '/media/data/models/Spikingformer/Spikingformer-768-github-model/checkpoint-284.pth.tar' (epoch 284)
+Loaded checkpoint '/media/data/models/Spikingformer/Spikingformer-768-github-model/checkpoint-284.pth.tar' (epoch 284)
+INFO:train:Scheduled epochs: 310
+Scheduled epochs: 310
+Namespace(aa='rand-m9-mstd0.5-inc1', amp=True, apex_amp=False, aug_splits=0, batch_size=12, bn_eps=None, bn_momentum=None, bn_tf=False, channels_last=False, checkpoint_hist=10, clip_grad=None, clip_mode='norm', color_jitter=0.4, cooldown_epochs=10, crop_pct=1.0, cutmix=1.0, cutmix_minmax=None, data_dir='/media/data/imagenet2012/', dataset='imagenet', decay_epochs=30, decay_rate=0.1, depths=8, device='cuda:1', dim=768, dist_bn='', distributed=False, drop=0.0, drop_block=None, drop_connect=None, drop_path=None, epoch_repeats=0.0, epochs=300, eval_metric='top1', experiment='', gp=None, hflip=0.5, img_size=224, initial_checkpoint='', input_size=None, interpolation='bicubic', jsd=False, layer=4, local_rank=0, log_interval=1000, log_wandb=False, lr=0.0005, lr_cycle_limit=1, lr_cycle_mul=1.0, lr_noise=None, lr_noise_pct=0.67, lr_noise_std=1.0, mean=[0.485, 0.456, 0.406], min_lr=1e-05, mixup=0.8, mixup_mode='batch', mixup_off_epoch=0, mixup_prob=1.0, mixup_switch_prob=0.5, mlp_ratio=4, model='vitsnn', model_ema=False, model_ema_decay=0.9998, model_ema_force_cpu=False, momentum=0.9, native_amp=True, no_aug=False, no_prefetcher=False, no_resume_opt=True, num_classes=1000, num_heads=8, opt='adamw', opt_betas=None, opt_eps=None, output='', patch_size=16, patience_epochs=10, pin_mem=False, prefetcher=True, pretrained=False, rank=0, ratio=[1.0, 1.0], recount=1, recovery_interval=0, remode='const', reprob=0.25, resplit=False, resume='/media/data/models/Spikingformer/Spikingformer-768-github-model/checkpoint-284.pth.tar', save_images=False, scale=[1.0, 1.0], sched='cosine', seed=42, smoothing=0.1, split_bn=False, start_epoch=None, std=[0.229, 0.224, 0.225], sync_bn=False, time_step=4, torchscript=False, train_interpolation='bicubic', train_split='train', tta=0, use_multi_epochs_loader=False, val_batch_size=12, val_split='validation', vflip=0.0, warmup_epochs=20, warmup_lr=1e-06, weight_decay=0.05, workers=8, world_size=1)
+Warning: module Sigmoid is treated as a zero-op.
+Warning: module SpikingTokenizer is treated as a zero-op.
+Warning: module LayerNorm is treated as a zero-op.
+Warning: module SpikingSelfAttention is treated as a zero-op.
+Warning: module Identity is treated as a zero-op.
+Warning: module MLP is treated as a zero-op.
+Warning: module SpikingTransformer is treated as a zero-op.
+Warning: module DropPath is treated as a zero-op.
+Warning: module vit_snn is treated as a zero-op.
+  Acc@1: 100.0000 (89.7500)  Acc@5: 100.0000 (97.3333)
+  Acc@1: 100.0000 (82.2917)  Acc@5: 100.0000 (95.6250)
+  Acc@1: 75.0000 (79.0278)  Acc@5: 100.0000 (94.3056)
+  Acc@1: 100.0000 (80.6458)  Acc@5: 100.0000 (94.9167)
+  Acc@1: 58.3333 (81.3833)  Acc@5: 100.0000 (94.9833)
+  Acc@1: 91.6667 (82.5278)  Acc@5: 91.6667 (95.2500)
+  Acc@1: 25.0000 (81.7500)  Acc@5: 91.6667 (95.1905)
+  Acc@1: 83.3333 (81.1875)  Acc@5: 91.6667 (95.1563)
+  Acc@1: 91.6667 (80.8241)  Acc@5: 100.0000 (95.2130)
+  Acc@1: 91.6667 (80.6167)  Acc@5: 100.0000 (95.2833)
+  Acc@1: 91.6667 (80.7500)  Acc@5: 91.6667 (95.4545)
+  Acc@1: 66.6667 (80.0833)  Acc@5: 91.6667 (95.3750)
+  Acc@1: 83.3333 (80.2949)  Acc@5: 100.0000 (95.4936)
+  Acc@1: 100.0000 (80.7441)  Acc@5: 100.0000 (95.5833)
+  Acc@1: 75.0000 (80.6056)  Acc@5: 83.3333 (95.6389)
+  Acc@1: 91.6667 (80.5729)  Acc@5: 91.6667 (95.5313)
+  Acc@1: 91.6667 (80.5392)  Acc@5: 100.0000 (95.5294)
+  Acc@1: 58.3333 (79.9907)  Acc@5: 75.0000 (95.2500)
+  Acc@1: 91.6667 (79.6184)  Acc@5: 100.0000 (94.9912)
+  Acc@1: 58.3333 (79.1583)  Acc@5: 100.0000 (94.6625)
+  Acc@1: 75.0000 (78.5119)  Acc@5: 91.6667 (94.3532)
+  Acc@1: 33.3333 (78.0455)  Acc@5: 91.6667 (94.1742)
+  Acc@1: 66.6667 (77.8804)  Acc@5: 100.0000 (94.0652)
+  Acc@1: 91.6667 (78.0347)  Acc@5: 100.0000 (94.0382)
+  Acc@1: 75.0000 (77.7300)  Acc@5: 91.6667 (93.8633)
+  Acc@1: 33.3333 (77.4968)  Acc@5: 50.0000 (93.6987)
+  Acc@1: 75.0000 (77.2809)  Acc@5: 91.6667 (93.5957)
+  Acc@1: 83.3333 (77.0030)  Acc@5: 100.0000 (93.4673)
+  Acc@1: 75.0000 (76.8506)  Acc@5: 91.6667 (93.3477)
+  Acc@1: 91.6667 (76.8278)  Acc@5: 100.0000 (93.2750)
+  Acc@1: 66.6667 (76.6909)  Acc@5: 83.3333 (93.1828)
+  Acc@1: 33.3333 (76.4688)  Acc@5: 50.0000 (93.0521)
+  Acc@1: 83.3333 (76.3838)  Acc@5: 91.6667 (92.9545)
+  Acc@1: 58.3333 (76.2647)  Acc@5: 100.0000 (92.8456)
+  Acc@1: 66.6667 (76.0310)  Acc@5: 91.6667 (92.7048)
+  Acc@1: 91.6667 (75.8681)  Acc@5: 100.0000 (92.6273)
+  Acc@1: 66.6667 (75.7950)  Acc@5: 83.3333 (92.5811)
+  Acc@1: 66.6667 (75.5811)  Acc@5: 91.6667 (92.4868)
+  Acc@1: 75.0000 (75.5897)  Acc@5: 83.3333 (92.5214)
+  Acc@1: 91.6667 (75.7396)  Acc@5: 100.0000 (92.6229)
+  Acc@1: 100.0000 (75.5142)  Acc@5: 100.0000 (92.5427)
+  Acc@1: 37.5000 (75.6440)  Acc@5: 75.0000 (92.5940)
+vit_snn(
+  (patch_embed): SpikingTokenizer(
+    (proj_conv): Conv2d(3, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False, 2592, 0.004% Params, 520224768.0 Ops, 0.700% oriMACs, 0.0 Ops, 0.000% ACs, 520224768.0 Ops, 76.374% MACs, 100.000% Spike Rate, SpkStat: None)
+    (proj_bn): BatchNorm2d(96, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 192, 0.000% Params, 38535168.0 Ops, 0.052% oriMACs, 0.0 Ops, 0.000% ACs, 38535168.0 Ops, 5.657% MACs, 100.000% Spike Rate, SpkStat: None)
+    (proj1_lif): MultiStepLIFNode(
+      v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 19267584.0 Ops, 0.026% oriMACs, 19267584.0 Ops, 0.153% ACs, 0.0 Ops, 0.000% MACs, 10.292% Spike Rate, SpkStat: None
+      (surrogate_function): Sigmoid()
+    )
+    (maxpool1): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False, 0, 0.000% Params, 19267584.0 Ops, 0.026% oriMACs, 1983073.1322346875 Ops, 0.016% ACs, 0.0 Ops, 0.000% MACs, 10.292% Spike Rate, SpkStat: None)
+    (proj1_conv): Conv2d(96, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False, 165888, 0.250% Params, 8323596288.0 Ops, 11.194% oriMACs, 1647813072.3792412 Ops, 13.114% ACs, 0.0 Ops, 0.000% MACs, 19.797% Spike Rate, SpkStat: None)
+    (proj1_bn): BatchNorm2d(192, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 384, 0.001% Params, 19267584.0 Ops, 0.026% oriMACs, 0.0 Ops, 0.000% ACs, 19267584.0 Ops, 2.829% MACs, 100.000% Spike Rate, SpkStat: None)
+    (proj2_lif): MultiStepLIFNode(
+      v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 9633792.0 Ops, 0.013% oriMACs, 9633792.0 Ops, 0.077% ACs, 0.0 Ops, 0.000% MACs, 4.399% Spike Rate, SpkStat: None
+      (surrogate_function): Sigmoid()
+    )
+    (maxpool2): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False, 0, 0.000% Params, 9633792.0 Ops, 0.013% oriMACs, 423771.4827617578 Ops, 0.003% ACs, 0.0 Ops, 0.000% MACs, 4.399% Spike Rate, SpkStat: None)
+    (proj2_conv): Conv2d(192, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False, 663552, 1.000% Params, 8323596288.0 Ops, 11.194% oriMACs, 1097851124.9990811 Ops, 8.737% ACs, 0.0 Ops, 0.000% MACs, 13.190% Spike Rate, SpkStat: None)
+    (proj2_bn): BatchNorm2d(384, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 768, 0.001% Params, 9633792.0 Ops, 0.013% oriMACs, 0.0 Ops, 0.000% ACs, 9633792.0 Ops, 1.414% MACs, 100.000% Spike Rate, SpkStat: None)
+    (proj3_lif): MultiStepLIFNode(
+      v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 4816896.0 Ops, 0.006% oriMACs, 4816896.0 Ops, 0.038% ACs, 0.0 Ops, 0.000% MACs, 3.440% Spike Rate, SpkStat: None
+      (surrogate_function): Sigmoid()
+    )
+    (maxpool3): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False, 0, 0.000% Params, 4816896.0 Ops, 0.006% oriMACs, 165722.63377615722 Ops, 0.001% ACs, 0.0 Ops, 0.000% MACs, 3.440% Spike Rate, SpkStat: None)
+    (proj3_conv): Conv2d(384, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False, 2654208, 4.000% Params, 8323596288.0 Ops, 11.194% oriMACs, 1005883616.6510513 Ops, 8.005% ACs, 0.0 Ops, 0.000% MACs, 12.085% Spike Rate, SpkStat: None)
+    (proj3_bn): BatchNorm2d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 4816896.0 Ops, 0.006% oriMACs, 0.0 Ops, 0.000% ACs, 4816896.0 Ops, 0.707% MACs, 100.000% Spike Rate, SpkStat: None)
+    (proj4_lif): MultiStepLIFNode(
+      v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 2408448.0 Ops, 0.003% oriMACs, 2408448.0 Ops, 0.019% ACs, 0.0 Ops, 0.000% MACs, 3.677% Spike Rate, SpkStat: None
+      (surrogate_function): Sigmoid()
+    )
+    (maxpool4): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False, 0, 0.000% Params, 2408448.0 Ops, 0.003% oriMACs, 88552.93716614501 Ops, 0.001% ACs, 0.0 Ops, 0.000% MACs, 3.677% Spike Rate, SpkStat: None)
+    (proj4_conv): Conv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False, 5308416, 7.999% Params, 4161798144.0 Ops, 5.597% oriMACs, 541388139.6043968 Ops, 4.309% ACs, 0.0 Ops, 0.000% MACs, 13.008% Spike Rate, SpkStat: None)
+    (proj4_bn): BatchNorm2d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+  )
+  (block): ModuleList(
+    (0): SpikingTransformer(
+      (norm1): LayerNorm()
+      (attn): SpikingSelfAttention(
+        (proj_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 14.749% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (q_conv): Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False, 589824, 0.889% Params, 462422016.0 Ops, 0.622% oriMACs, 68201345.26792125 Ops, 0.543% ACs, 0.0 Ops, 0.000% MACs, 14.749% Spike Rate, SpkStat: None)
+        (q_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+        (q_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 13.505% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (k_conv): Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False, 589824, 0.889% Params, 462422016.0 Ops, 0.622% oriMACs, 68201345.26792125 Ops, 0.543% ACs, 0.0 Ops, 0.000% MACs, 14.749% Spike Rate, SpkStat: None)
+        (k_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+        (k_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 2.981% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (v_conv): Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False, 589824, 0.889% Params, 462422016.0 Ops, 0.622% oriMACs, 68201345.26792125 Ops, 0.543% ACs, 0.0 Ops, 0.000% MACs, 14.749% Spike Rate, SpkStat: None)
+        (v_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+        (v_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 5.937% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (attn_lif): MultiStepLIFNode(
+          v_threshold=0.5, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 26.517% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (proj_conv): Conv1d(768, 768, kernel_size=(1,), stride=(1,), 590592, 0.890% Params, 463024128.0 Ops, 0.623% oriMACs, 122778694.97101316 Ops, 0.977% ACs, 0.0 Ops, 0.000% MACs, 26.517% Spike Rate, SpkStat: None)
+        (proj_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+      )
+      (drop_path): Identity()
+      (norm2): LayerNorm()
+      (mlp): MLP(
+        (mlp1_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 22.752% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (mlp1_conv): Conv2d(768, 3072, kernel_size=(1, 1), stride=(1, 1), 2362368, 3.560% Params, 1852096512.0 Ops, 2.491% oriMACs, 421380369.61726296 Ops, 3.353% ACs, 0.0 Ops, 0.000% MACs, 22.752% Spike Rate, SpkStat: None)
+        (mlp1_bn): BatchNorm2d(3072, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 6144, 0.009% Params, 4816896.0 Ops, 0.006% oriMACs, 0.0 Ops, 0.000% ACs, 4816896.0 Ops, 0.707% MACs, 100.000% Spike Rate, SpkStat: None)
+        (mlp2_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 2408448.0 Ops, 0.003% oriMACs, 2408448.0 Ops, 0.019% ACs, 0.0 Ops, 0.000% MACs, 2.350% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (mlp2_conv): Conv2d(3072, 768, kernel_size=(1, 1), stride=(1, 1), 2360064, 3.556% Params, 1850290176.0 Ops, 2.488% oriMACs, 43474185.38996657 Ops, 0.346% ACs, 0.0 Ops, 0.000% MACs, 2.350% Spike Rate, SpkStat: None)
+        (mlp2_bn): BatchNorm2d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+      )
+    )
+    (1): SpikingTransformer(
+      (norm1): LayerNorm()
+      (attn): SpikingSelfAttention(
+        (proj_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 29.875% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (q_conv): Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False, 589824, 0.889% Params, 462422016.0 Ops, 0.622% oriMACs, 138149944.20801 Ops, 1.099% ACs, 0.0 Ops, 0.000% MACs, 29.875% Spike Rate, SpkStat: None)
+        (q_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+        (q_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 10.502% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (k_conv): Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False, 589824, 0.889% Params, 462422016.0 Ops, 0.622% oriMACs, 138149944.20801 Ops, 1.099% ACs, 0.0 Ops, 0.000% MACs, 29.875% Spike Rate, SpkStat: None)
+        (k_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+        (k_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 3.767% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (v_conv): Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False, 589824, 0.889% Params, 462422016.0 Ops, 0.622% oriMACs, 138149944.20801 Ops, 1.099% ACs, 0.0 Ops, 0.000% MACs, 29.875% Spike Rate, SpkStat: None)
+        (v_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+        (v_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 6.063% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (attn_lif): MultiStepLIFNode(
+          v_threshold=0.5, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 28.011% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (proj_conv): Conv1d(768, 768, kernel_size=(1,), stride=(1,), 590592, 0.890% Params, 463024128.0 Ops, 0.623% oriMACs, 129699772.0780382 Ops, 1.032% ACs, 0.0 Ops, 0.000% MACs, 28.011% Spike Rate, SpkStat: None)
+        (proj_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+      )
+      (drop_path): DropPath()
+      (norm2): LayerNorm()
+      (mlp): MLP(
+        (mlp1_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 29.201% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (mlp1_conv): Conv2d(768, 3072, kernel_size=(1, 1), stride=(1, 1), 2362368, 3.560% Params, 1852096512.0 Ops, 2.491% oriMACs, 540831983.8556844 Ops, 4.304% ACs, 0.0 Ops, 0.000% MACs, 29.201% Spike Rate, SpkStat: None)
+        (mlp1_bn): BatchNorm2d(3072, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 6144, 0.009% Params, 4816896.0 Ops, 0.006% oriMACs, 0.0 Ops, 0.000% ACs, 4816896.0 Ops, 0.707% MACs, 100.000% Spike Rate, SpkStat: None)
+        (mlp2_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 2408448.0 Ops, 0.003% oriMACs, 2408448.0 Ops, 0.019% ACs, 0.0 Ops, 0.000% MACs, 1.826% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (mlp2_conv): Conv2d(3072, 768, kernel_size=(1, 1), stride=(1, 1), 2360064, 3.556% Params, 1850290176.0 Ops, 2.488% oriMACs, 33789012.10292912 Ops, 0.269% ACs, 0.0 Ops, 0.000% MACs, 1.826% Spike Rate, SpkStat: None)
+        (mlp2_bn): BatchNorm2d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+      )
+    )
+    (2): SpikingTransformer(
+      (norm1): LayerNorm()
+      (attn): SpikingSelfAttention(
+        (proj_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 29.063% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (q_conv): Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False, 589824, 0.889% Params, 462422016.0 Ops, 0.622% oriMACs, 134395653.4998525 Ops, 1.070% ACs, 0.0 Ops, 0.000% MACs, 29.063% Spike Rate, SpkStat: None)
+        (q_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+        (q_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 8.326% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (k_conv): Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False, 589824, 0.889% Params, 462422016.0 Ops, 0.622% oriMACs, 134395653.4998525 Ops, 1.070% ACs, 0.0 Ops, 0.000% MACs, 29.063% Spike Rate, SpkStat: None)
+        (k_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+        (k_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 3.776% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (v_conv): Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False, 589824, 0.889% Params, 462422016.0 Ops, 0.622% oriMACs, 134395653.4998525 Ops, 1.070% ACs, 0.0 Ops, 0.000% MACs, 29.063% Spike Rate, SpkStat: None)
+        (v_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+        (v_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 6.863% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (attn_lif): MultiStepLIFNode(
+          v_threshold=0.5, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 28.583% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (proj_conv): Conv1d(768, 768, kernel_size=(1,), stride=(1,), 590592, 0.890% Params, 463024128.0 Ops, 0.623% oriMACs, 132344480.08793263 Ops, 1.053% ACs, 0.0 Ops, 0.000% MACs, 28.583% Spike Rate, SpkStat: None)
+        (proj_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+      )
+      (drop_path): DropPath()
+      (norm2): LayerNorm()
+      (mlp): MLP(
+        (mlp1_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 29.764% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (mlp1_conv): Conv2d(768, 3072, kernel_size=(1, 1), stride=(1, 1), 2362368, 3.560% Params, 1852096512.0 Ops, 2.491% oriMACs, 551248963.7208203 Ops, 4.387% ACs, 0.0 Ops, 0.000% MACs, 29.764% Spike Rate, SpkStat: None)
+        (mlp1_bn): BatchNorm2d(3072, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 6144, 0.009% Params, 4816896.0 Ops, 0.006% oriMACs, 0.0 Ops, 0.000% ACs, 4816896.0 Ops, 0.707% MACs, 100.000% Spike Rate, SpkStat: None)
+        (mlp2_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 2408448.0 Ops, 0.003% oriMACs, 2408448.0 Ops, 0.019% ACs, 0.0 Ops, 0.000% MACs, 1.556% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (mlp2_conv): Conv2d(3072, 768, kernel_size=(1, 1), stride=(1, 1), 2360064, 3.556% Params, 1850290176.0 Ops, 2.488% oriMACs, 28794715.654274754 Ops, 0.229% ACs, 0.0 Ops, 0.000% MACs, 1.556% Spike Rate, SpkStat: None)
+        (mlp2_bn): BatchNorm2d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+      )
+    )
+    (3): SpikingTransformer(
+      (norm1): LayerNorm()
+      (attn): SpikingSelfAttention(
+        (proj_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 30.840% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (q_conv): Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False, 589824, 0.889% Params, 462422016.0 Ops, 0.622% oriMACs, 142609575.6632925 Ops, 1.135% ACs, 0.0 Ops, 0.000% MACs, 30.840% Spike Rate, SpkStat: None)
+        (q_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+        (q_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 5.633% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (k_conv): Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False, 589824, 0.889% Params, 462422016.0 Ops, 0.622% oriMACs, 142609575.6632925 Ops, 1.135% ACs, 0.0 Ops, 0.000% MACs, 30.840% Spike Rate, SpkStat: None)
+        (k_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+        (k_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 3.519% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (v_conv): Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False, 589824, 0.889% Params, 462422016.0 Ops, 0.622% oriMACs, 142609575.6632925 Ops, 1.135% ACs, 0.0 Ops, 0.000% MACs, 30.840% Spike Rate, SpkStat: None)
+        (v_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+        (v_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 6.847% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (attn_lif): MultiStepLIFNode(
+          v_threshold=0.5, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 23.447% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (proj_conv): Conv1d(768, 768, kernel_size=(1,), stride=(1,), 590592, 0.890% Params, 463024128.0 Ops, 0.623% oriMACs, 108566051.9027586 Ops, 0.864% ACs, 0.0 Ops, 0.000% MACs, 23.447% Spike Rate, SpkStat: None)
+        (proj_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+      )
+      (drop_path): DropPath()
+      (norm2): LayerNorm()
+      (mlp): MLP(
+        (mlp1_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 31.473% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (mlp1_conv): Conv2d(768, 3072, kernel_size=(1, 1), stride=(1, 1), 2362368, 3.560% Params, 1852096512.0 Ops, 2.491% oriMACs, 582919266.5858071 Ops, 4.639% ACs, 0.0 Ops, 0.000% MACs, 31.473% Spike Rate, SpkStat: None)
+        (mlp1_bn): BatchNorm2d(3072, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 6144, 0.009% Params, 4816896.0 Ops, 0.006% oriMACs, 0.0 Ops, 0.000% ACs, 4816896.0 Ops, 0.707% MACs, 100.000% Spike Rate, SpkStat: None)
+        (mlp2_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 2408448.0 Ops, 0.003% oriMACs, 2408448.0 Ops, 0.019% ACs, 0.0 Ops, 0.000% MACs, 1.019% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (mlp2_conv): Conv2d(3072, 768, kernel_size=(1, 1), stride=(1, 1), 2360064, 3.556% Params, 1850290176.0 Ops, 2.488% oriMACs, 18860540.295455627 Ops, 0.150% ACs, 0.0 Ops, 0.000% MACs, 1.019% Spike Rate, SpkStat: None)
+        (mlp2_bn): BatchNorm2d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+      )
+    )
+    (4): SpikingTransformer(
+      (norm1): LayerNorm()
+      (attn): SpikingSelfAttention(
+        (proj_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 31.186% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (q_conv): Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False, 589824, 0.889% Params, 462422016.0 Ops, 0.622% oriMACs, 144211660.5376125 Ops, 1.148% ACs, 0.0 Ops, 0.000% MACs, 31.186% Spike Rate, SpkStat: None)
+        (q_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+        (q_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 6.755% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (k_conv): Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False, 589824, 0.889% Params, 462422016.0 Ops, 0.622% oriMACs, 144211660.5376125 Ops, 1.148% ACs, 0.0 Ops, 0.000% MACs, 31.186% Spike Rate, SpkStat: None)
+        (k_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+        (k_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 3.175% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (v_conv): Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False, 589824, 0.889% Params, 462422016.0 Ops, 0.622% oriMACs, 144211660.5376125 Ops, 1.148% ACs, 0.0 Ops, 0.000% MACs, 31.186% Spike Rate, SpkStat: None)
+        (v_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+        (v_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 5.899% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (attn_lif): MultiStepLIFNode(
+          v_threshold=0.5, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 18.023% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (proj_conv): Conv1d(768, 768, kernel_size=(1,), stride=(1,), 590592, 0.890% Params, 463024128.0 Ops, 0.623% oriMACs, 83450488.56128457 Ops, 0.664% ACs, 0.0 Ops, 0.000% MACs, 18.023% Spike Rate, SpkStat: None)
+        (proj_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+      )
+      (drop_path): DropPath()
+      (norm2): LayerNorm()
+      (mlp): MLP(
+        (mlp1_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 31.287% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (mlp1_conv): Conv2d(768, 3072, kernel_size=(1, 1), stride=(1, 1), 2362368, 3.560% Params, 1852096512.0 Ops, 2.491% oriMACs, 579467510.4194134 Ops, 4.612% ACs, 0.0 Ops, 0.000% MACs, 31.287% Spike Rate, SpkStat: None)
+        (mlp1_bn): BatchNorm2d(3072, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 6144, 0.009% Params, 4816896.0 Ops, 0.006% oriMACs, 0.0 Ops, 0.000% ACs, 4816896.0 Ops, 0.707% MACs, 100.000% Spike Rate, SpkStat: None)
+        (mlp2_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 2408448.0 Ops, 0.003% oriMACs, 2408448.0 Ops, 0.019% ACs, 0.0 Ops, 0.000% MACs, 0.563% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (mlp2_conv): Conv2d(3072, 768, kernel_size=(1, 1), stride=(1, 1), 2360064, 3.556% Params, 1850290176.0 Ops, 2.488% oriMACs, 10417158.818485796 Ops, 0.083% ACs, 0.0 Ops, 0.000% MACs, 0.563% Spike Rate, SpkStat: None)
+        (mlp2_bn): BatchNorm2d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+      )
+    )
+    (5): SpikingTransformer(
+      (norm1): LayerNorm()
+      (attn): SpikingSelfAttention(
+        (proj_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 30.693% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (q_conv): Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False, 589824, 0.889% Params, 462422016.0 Ops, 0.622% oriMACs, 141930230.3336925 Ops, 1.130% ACs, 0.0 Ops, 0.000% MACs, 30.693% Spike Rate, SpkStat: None)
+        (q_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+        (q_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 5.022% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (k_conv): Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False, 589824, 0.889% Params, 462422016.0 Ops, 0.622% oriMACs, 141930230.3336925 Ops, 1.130% ACs, 0.0 Ops, 0.000% MACs, 30.693% Spike Rate, SpkStat: None)
+        (k_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+        (k_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 2.240% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (v_conv): Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False, 589824, 0.889% Params, 462422016.0 Ops, 0.622% oriMACs, 141930230.3336925 Ops, 1.130% ACs, 0.0 Ops, 0.000% MACs, 30.693% Spike Rate, SpkStat: None)
+        (v_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+        (v_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 4.205% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (attn_lif): MultiStepLIFNode(
+          v_threshold=0.5, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 12.603% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (proj_conv): Conv1d(768, 768, kernel_size=(1,), stride=(1,), 590592, 0.890% Params, 463024128.0 Ops, 0.623% oriMACs, 58356673.69560434 Ops, 0.464% ACs, 0.0 Ops, 0.000% MACs, 12.603% Spike Rate, SpkStat: None)
+        (proj_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+      )
+      (drop_path): DropPath()
+      (norm2): LayerNorm()
+      (mlp): MLP(
+        (mlp1_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 29.968% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (mlp1_conv): Conv2d(768, 3072, kernel_size=(1, 1), stride=(1, 1), 2362368, 3.560% Params, 1852096512.0 Ops, 2.491% oriMACs, 555029620.9641118 Ops, 4.417% ACs, 0.0 Ops, 0.000% MACs, 29.968% Spike Rate, SpkStat: None)
+        (mlp1_bn): BatchNorm2d(3072, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 6144, 0.009% Params, 4816896.0 Ops, 0.006% oriMACs, 0.0 Ops, 0.000% ACs, 4816896.0 Ops, 0.707% MACs, 100.000% Spike Rate, SpkStat: None)
+        (mlp2_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 2408448.0 Ops, 0.003% oriMACs, 2408448.0 Ops, 0.019% ACs, 0.0 Ops, 0.000% MACs, 0.315% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (mlp2_conv): Conv2d(3072, 768, kernel_size=(1, 1), stride=(1, 1), 2360064, 3.556% Params, 1850290176.0 Ops, 2.488% oriMACs, 5824823.991412981 Ops, 0.046% ACs, 0.0 Ops, 0.000% MACs, 0.315% Spike Rate, SpkStat: None)
+        (mlp2_bn): BatchNorm2d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+      )
+    )
+    (6): SpikingTransformer(
+      (norm1): LayerNorm()
+      (attn): SpikingSelfAttention(
+        (proj_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 29.206% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (q_conv): Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False, 589824, 0.889% Params, 462422016.0 Ops, 0.622% oriMACs, 135055807.740945 Ops, 1.075% ACs, 0.0 Ops, 0.000% MACs, 29.206% Spike Rate, SpkStat: None)
+        (q_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+        (q_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 7.546% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (k_conv): Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False, 589824, 0.889% Params, 462422016.0 Ops, 0.622% oriMACs, 135055807.740945 Ops, 1.075% ACs, 0.0 Ops, 0.000% MACs, 29.206% Spike Rate, SpkStat: None)
+        (k_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+        (k_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 3.070% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (v_conv): Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False, 589824, 0.889% Params, 462422016.0 Ops, 0.622% oriMACs, 135055807.740945 Ops, 1.075% ACs, 0.0 Ops, 0.000% MACs, 29.206% Spike Rate, SpkStat: None)
+        (v_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+        (v_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 4.039% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (attn_lif): MultiStepLIFNode(
+          v_threshold=0.5, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 8.090% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (proj_conv): Conv1d(768, 768, kernel_size=(1,), stride=(1,), 590592, 0.890% Params, 463024128.0 Ops, 0.623% oriMACs, 37460208.54033703 Ops, 0.298% ACs, 0.0 Ops, 0.000% MACs, 8.090% Spike Rate, SpkStat: None)
+        (proj_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+      )
+      (drop_path): DropPath()
+      (norm2): LayerNorm()
+      (mlp): MLP(
+        (mlp1_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 26.951% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (mlp1_conv): Conv2d(768, 3072, kernel_size=(1, 1), stride=(1, 1), 2362368, 3.560% Params, 1852096512.0 Ops, 2.491% oriMACs, 499164982.2778049 Ops, 3.972% ACs, 0.0 Ops, 0.000% MACs, 26.951% Spike Rate, SpkStat: None)
+        (mlp1_bn): BatchNorm2d(3072, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 6144, 0.009% Params, 4816896.0 Ops, 0.006% oriMACs, 0.0 Ops, 0.000% ACs, 4816896.0 Ops, 0.707% MACs, 100.000% Spike Rate, SpkStat: None)
+        (mlp2_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 2408448.0 Ops, 0.003% oriMACs, 2408448.0 Ops, 0.019% ACs, 0.0 Ops, 0.000% MACs, 0.289% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (mlp2_conv): Conv2d(3072, 768, kernel_size=(1, 1), stride=(1, 1), 2360064, 3.556% Params, 1850290176.0 Ops, 2.488% oriMACs, 5343022.718032062 Ops, 0.043% ACs, 0.0 Ops, 0.000% MACs, 0.289% Spike Rate, SpkStat: None)
+        (mlp2_bn): BatchNorm2d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+      )
+    )
+    (7): SpikingTransformer(
+      (norm1): LayerNorm()
+      (attn): SpikingSelfAttention(
+        (proj_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 27.381% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (q_conv): Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False, 589824, 0.889% Params, 462422016.0 Ops, 0.622% oriMACs, 126616882.7084175 Ops, 1.008% ACs, 0.0 Ops, 0.000% MACs, 27.381% Spike Rate, SpkStat: None)
+        (q_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+        (q_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 8.323% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (k_conv): Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False, 589824, 0.889% Params, 462422016.0 Ops, 0.622% oriMACs, 126616882.7084175 Ops, 1.008% ACs, 0.0 Ops, 0.000% MACs, 27.381% Spike Rate, SpkStat: None)
+        (k_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+        (k_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 2.933% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (v_conv): Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False, 589824, 0.889% Params, 462422016.0 Ops, 0.622% oriMACs, 126616882.7084175 Ops, 1.008% ACs, 0.0 Ops, 0.000% MACs, 27.381% Spike Rate, SpkStat: None)
+        (v_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+        (v_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 7.041% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (attn_lif): MultiStepLIFNode(
+          v_threshold=0.5, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 7.155% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (proj_conv): Conv1d(768, 768, kernel_size=(1,), stride=(1,), 590592, 0.890% Params, 463024128.0 Ops, 0.623% oriMACs, 33128221.8675729 Ops, 0.264% ACs, 0.0 Ops, 0.000% MACs, 7.155% Spike Rate, SpkStat: None)
+        (proj_bn): BatchNorm1d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+      )
+      (drop_path): DropPath()
+      (norm2): LayerNorm()
+      (mlp): MLP(
+        (mlp1_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 602112.0 Ops, 0.001% oriMACs, 602112.0 Ops, 0.005% ACs, 0.0 Ops, 0.000% MACs, 26.967% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (mlp1_conv): Conv2d(768, 3072, kernel_size=(1, 1), stride=(1, 1), 2362368, 3.560% Params, 1852096512.0 Ops, 2.491% oriMACs, 499451076.708364 Ops, 3.975% ACs, 0.0 Ops, 0.000% MACs, 26.967% Spike Rate, SpkStat: None)
+        (mlp1_bn): BatchNorm2d(3072, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 6144, 0.009% Params, 4816896.0 Ops, 0.006% oriMACs, 0.0 Ops, 0.000% ACs, 4816896.0 Ops, 0.707% MACs, 100.000% Spike Rate, SpkStat: None)
+        (mlp2_lif): MultiStepLIFNode(
+          v_threshold=1.0, v_reset=0.0, detach_reset=True, tau=2.0, backend=cupy, 0, 0.000% Params, 2408448.0 Ops, 0.003% oriMACs, 2408448.0 Ops, 0.019% ACs, 0.0 Ops, 0.000% MACs, 0.558% Spike Rate, SpkStat: None
+          (surrogate_function): Sigmoid()
+        )
+        (mlp2_conv): Conv2d(3072, 768, kernel_size=(1, 1), stride=(1, 1), 2360064, 3.556% Params, 1850290176.0 Ops, 2.488% oriMACs, 10333075.337153874 Ops, 0.082% ACs, 0.0 Ops, 0.000% MACs, 0.558% Spike Rate, SpkStat: None)
+        (mlp2_bn): BatchNorm2d(768, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True, 1536, 0.002% Params, 1204224.0 Ops, 0.002% oriMACs, 0.0 Ops, 0.000% ACs, 1204224.0 Ops, 0.177% MACs, 100.000% Spike Rate, SpkStat: None)
+      )
+    )
+  )
+  (head): Linear(in_features=768, out_features=1000, bias=True, 769000, 1.159% Params, 769000.0 Ops, 0.001% oriMACs, 0.0 Ops, 0.000% ACs, 769000.0 Ops, 0.113% MACs, 100.000% Spike Rate, SpkStat: None)
+)
+Calculating energy consumption ...
+Info of Conv/Linear layers: 
+('patch_embed.proj_conv', Conv2d(3, 96, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False), array([5.20224768e+08, 0.00000000e+00, 5.20224768e+08, 1.00000000e+02]))
+('patch_embed.proj1_conv', Conv2d(96, 192, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False), array([8.32359629e+09, 1.64781307e+09, 0.00000000e+00, 1.97965460e+01]))
+('patch_embed.proj2_conv', Conv2d(192, 384, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False), array([8.32359629e+09, 1.09785112e+09, 0.00000000e+00, 1.31895378e+01]))
+('patch_embed.proj3_conv', Conv2d(384, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False), array([8.32359629e+09, 1.00588362e+09, 0.00000000e+00, 1.20846457e+01]))
+('patch_embed.proj4_conv', Conv2d(768, 768, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False), array([4.16179814e+09, 5.41388140e+08, 0.00000000e+00, 1.30084657e+01]))
+('block[0].attn.q_conv', Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False), array([4.62422016e+08, 6.82013453e+07, 0.00000000e+00, 1.47487163e+01]))
+('block[0].attn.k_conv', Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False), array([4.62422016e+08, 6.82013453e+07, 0.00000000e+00, 1.47487163e+01]))
+('block[0].attn.v_conv', Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False), array([4.62422016e+08, 6.82013453e+07, 0.00000000e+00, 1.47487163e+01]))
+('block[0].attn.proj_conv', Conv1d(768, 768, kernel_size=(1,), stride=(1,)), array([4.63024128e+08, 1.22778695e+08, 0.00000000e+00, 2.65166095e+01]))
+('block[0].mlp.mlp1_conv', Conv2d(768, 3072, kernel_size=(1, 1), stride=(1, 1)), array([1.85209651e+09, 4.21380370e+08, 0.00000000e+00, 2.27515193e+01]))
+('block[0].mlp.mlp2_conv', Conv2d(3072, 768, kernel_size=(1, 1), stride=(1, 1)), array([1.85029018e+09, 4.34741854e+07, 0.00000000e+00, 2.34958546e+00]))
+('block[1].attn.q_conv', Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False), array([4.62422016e+08, 1.38149944e+08, 0.00000000e+00, 2.98753035e+01]))
+('block[1].attn.k_conv', Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False), array([4.62422016e+08, 1.38149944e+08, 0.00000000e+00, 2.98753035e+01]))
+('block[1].attn.v_conv', Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False), array([4.62422016e+08, 1.38149944e+08, 0.00000000e+00, 2.98753035e+01]))
+('block[1].attn.proj_conv', Conv1d(768, 768, kernel_size=(1,), stride=(1,)), array([4.63024128e+08, 1.29699772e+08, 0.00000000e+00, 2.80114389e+01]))
+('block[1].mlp.mlp1_conv', Conv2d(768, 3072, kernel_size=(1, 1), stride=(1, 1)), array([1.85209651e+09, 5.40831984e+08, 0.00000000e+00, 2.92010668e+01]))
+('block[1].mlp.mlp2_conv', Conv2d(3072, 768, kernel_size=(1, 1), stride=(1, 1)), array([1.85029018e+09, 3.37890121e+07, 0.00000000e+00, 1.82614675e+00]))
+('block[2].attn.q_conv', Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False), array([4.62422016e+08, 1.34395653e+08, 0.00000000e+00, 2.90634241e+01]))
+('block[2].attn.k_conv', Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False), array([4.62422016e+08, 1.34395653e+08, 0.00000000e+00, 2.90634241e+01]))
+('block[2].attn.v_conv', Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False), array([4.62422016e+08, 1.34395653e+08, 0.00000000e+00, 2.90634241e+01]))
+('block[2].attn.proj_conv', Conv1d(768, 768, kernel_size=(1,), stride=(1,)), array([4.63024128e+08, 1.32344480e+08, 0.00000000e+00, 2.85826126e+01]))
+('block[2].mlp.mlp1_conv', Conv2d(768, 3072, kernel_size=(1, 1), stride=(1, 1)), array([1.85209651e+09, 5.51248964e+08, 0.00000000e+00, 2.97635107e+01]))
+('block[2].mlp.mlp2_conv', Conv2d(3072, 768, kernel_size=(1, 1), stride=(1, 1)), array([1.85029018e+09, 2.87947157e+07, 0.00000000e+00, 1.55622950e+00]))
+('block[3].attn.q_conv', Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False), array([4.62422016e+08, 1.42609576e+08, 0.00000000e+00, 3.08397023e+01]))
+('block[3].attn.k_conv', Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False), array([4.62422016e+08, 1.42609576e+08, 0.00000000e+00, 3.08397023e+01]))
+('block[3].attn.v_conv', Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False), array([4.62422016e+08, 1.42609576e+08, 0.00000000e+00, 3.08397023e+01]))
+('block[3].attn.proj_conv', Conv1d(768, 768, kernel_size=(1,), stride=(1,)), array([4.63024128e+08, 1.08566052e+08, 0.00000000e+00, 2.34471216e+01]))
+('block[3].mlp.mlp1_conv', Conv2d(768, 3072, kernel_size=(1, 1), stride=(1, 1)), array([1.85209651e+09, 5.82919267e+08, 0.00000000e+00, 3.14734939e+01]))
+('block[3].mlp.mlp2_conv', Conv2d(3072, 768, kernel_size=(1, 1), stride=(1, 1)), array([1.85029018e+09, 1.88605403e+07, 0.00000000e+00, 1.01932791e+00]))
+('block[4].attn.q_conv', Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False), array([4.62422016e+08, 1.44211661e+08, 0.00000000e+00, 3.11861667e+01]))
+('block[4].attn.k_conv', Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False), array([4.62422016e+08, 1.44211661e+08, 0.00000000e+00, 3.11861667e+01]))
+('block[4].attn.v_conv', Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False), array([4.62422016e+08, 1.44211661e+08, 0.00000000e+00, 3.11861667e+01]))
+('block[4].attn.proj_conv', Conv1d(768, 768, kernel_size=(1,), stride=(1,)), array([4.63024128e+08, 8.34504886e+07, 0.00000000e+00, 1.80228588e+01]))
+('block[4].mlp.mlp1_conv', Conv2d(768, 3072, kernel_size=(1, 1), stride=(1, 1)), array([1.85209651e+09, 5.79467510e+08, 0.00000000e+00, 3.12871279e+01]))
+('block[4].mlp.mlp2_conv', Conv2d(3072, 768, kernel_size=(1, 1), stride=(1, 1)), array([1.85029018e+09, 1.04171588e+07, 0.00000000e+00, 5.63001929e-01]))
+('block[5].attn.q_conv', Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False), array([4.62422016e+08, 1.41930230e+08, 0.00000000e+00, 3.06928039e+01]))
+('block[5].attn.k_conv', Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False), array([4.62422016e+08, 1.41930230e+08, 0.00000000e+00, 3.06928039e+01]))
+('block[5].attn.v_conv', Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False), array([4.62422016e+08, 1.41930230e+08, 0.00000000e+00, 3.06928039e+01]))
+('block[5].attn.proj_conv', Conv1d(768, 768, kernel_size=(1,), stride=(1,)), array([4.63024128e+08, 5.83566737e+07, 0.00000000e+00, 1.26033685e+01]))
+('block[5].mlp.mlp1_conv', Conv2d(768, 3072, kernel_size=(1, 1), stride=(1, 1)), array([1.85209651e+09, 5.55029621e+08, 0.00000000e+00, 2.99676573e+01]))
+('block[5].mlp.mlp2_conv', Conv2d(3072, 768, kernel_size=(1, 1), stride=(1, 1)), array([1.85029018e+09, 5.82482399e+06, 0.00000000e+00, 3.14805499e-01]))
+('block[6].attn.q_conv', Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False), array([4.62422016e+08, 1.35055808e+08, 0.00000000e+00, 2.92061912e+01]))
+('block[6].attn.k_conv', Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False), array([4.62422016e+08, 1.35055808e+08, 0.00000000e+00, 2.92061912e+01]))
+('block[6].attn.v_conv', Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False), array([4.62422016e+08, 1.35055808e+08, 0.00000000e+00, 2.92061912e+01]))
+('block[6].attn.proj_conv', Conv1d(768, 768, kernel_size=(1,), stride=(1,)), array([4.63024128e+08, 3.74602085e+07, 0.00000000e+00, 8.09031347e+00]))
+('block[6].mlp.mlp1_conv', Conv2d(768, 3072, kernel_size=(1, 1), stride=(1, 1)), array([1.85209651e+09, 4.99164982e+08, 0.00000000e+00, 2.69513600e+01]))
+('block[6].mlp.mlp2_conv', Conv2d(3072, 768, kernel_size=(1, 1), stride=(1, 1)), array([1.85029018e+09, 5.34302272e+06, 0.00000000e+00, 2.88770040e-01]))
+('block[7].attn.q_conv', Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False), array([4.62422016e+08, 1.26616883e+08, 0.00000000e+00, 2.73812756e+01]))
+('block[7].attn.k_conv', Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False), array([4.62422016e+08, 1.26616883e+08, 0.00000000e+00, 2.73812756e+01]))
+('block[7].attn.v_conv', Conv1d(768, 768, kernel_size=(1,), stride=(1,), bias=False), array([4.62422016e+08, 1.26616883e+08, 0.00000000e+00, 2.73812756e+01]))
+('block[7].attn.proj_conv', Conv1d(768, 768, kernel_size=(1,), stride=(1,)), array([4.63024128e+08, 3.31282219e+07, 0.00000000e+00, 7.15480859e+00]))
+('block[7].mlp.mlp1_conv', Conv2d(768, 3072, kernel_size=(1, 1), stride=(1, 1)), array([1.85209651e+09, 4.99451077e+08, 0.00000000e+00, 2.69668558e+01]))
+('block[7].mlp.mlp2_conv', Conv2d(3072, 768, kernel_size=(1, 1), stride=(1, 1)), array([1.85029018e+09, 1.03330753e+07, 0.00000000e+00, 5.58467084e-01]))
+('head', Linear(in_features=768, out_features=1000, bias=True), array([7.69e+05, 0.00e+00, 7.69e+05, 1.00e+02]))
+SSA info: 
+ {'depth': 8, 'Nheads': 12, 'embSize': 768, 'patchSize': 14, 'Tsteps': 4}
+Firing rate of Q/K/V inputs in each block: 
+[[0.13504587255466577, 0.029809614839687148, 0.059374576983854926], [0.10502227857612378, 0.03767449076381095, 0.060627427491204526], [0.083264635933484, 0.03776095036300132, 0.06862975352579866], [0.0563250279859985, 0.03519357228931017, 0.06847197796057848], [0.06754581377675473, 0.03175003137613819, 0.058989271577890176], [0.05021996689208955, 0.02239815261861332, 0.042047852859927334], [0.075462721379392, 0.03070094926452176, 0.0403859808697728], [0.08323420930894296, 0.029329224434424882, 0.07040979446432474]]
+Number of operations: 0.520993768 G MACs, 12.513659576717108 G ACs
+Energy consumption: 13.658864951845398 mJ
+Nops:  ['74355579880.0 Ops', '12565520953.860462 Ops', '681155560.0 Ops']
+Nparams:  66363208
+Time cost: 69.09677492380142 min
+
+Process finished with exit code 0
