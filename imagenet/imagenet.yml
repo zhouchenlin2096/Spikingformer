@@ -1,7 +1,7 @@
 dataset: imagenet
 num_classes: 1000
 img_size: 224
-dim: 512
+dim: 768
 patch_size: 16
 num_heads: 8
 mlp_ratio: 4
