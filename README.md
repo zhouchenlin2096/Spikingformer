@@ -121,6 +121,7 @@ python train.py
 ```
 
 ### Energy Consumption Calculation on ImageNet
+Download the trained model first [here](https://pan.baidu.com/s/1LsECpFOxh30O3vHWow8OGQ).
 ```
 cd imagenet
 python energy_consumption_calculation_on_imagenet.py
