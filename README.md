@@ -130,7 +130,7 @@ python energy_consumption_calculation_on_imagenet.py
 ```
 
 ## An Error Correction in the Manuscript
-The preprocessing (transforming events into frames) of neuromorphic datasets is according to SEW [1] or SpikingJelly [2]. The event stream comprises four dimensions: the event’s coordinate (x, y), time (t), and polarity (p). We split the event’s number N into T (the simulating time-step) slices with nearly the same number of events in each slice and integrate events into frames. It is a pity that Equation 20 in the manuscript is a formula mistake, we corrected it as follows:
+In neuromorphic datasets, the preprocessing (transforming events into frames) of neuromorphic datasets is according to SEW or SpikingJelly. The event stream comprises four dimensions: the event’s coordinate (x, y), time (t), and polarity (p). We split the event’s number N into T (the simulating time-step) slices with nearly the same number of events in each slice and integrate events into frames. It is a pity that Equation 20 in the manuscript is a formula mistake, we corrected it as follows:
 $$E_{Spikingformer}^{neuro}=E_{A C} \times\left(\sum_{i=2}^N S O P_{{Conv} }^i+\sum_{j=1}^M S O P_{{SSA}}^j\right)+E_{M A C} \times\left(FLOP_{{Conv}}^1\right) \label{eq:energy1}$$
 
 
