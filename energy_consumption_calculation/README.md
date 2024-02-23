@@ -1,6 +1,6 @@
 
 ## Get started quickly：energy consumption calculation on ImageNet
-Download the trained model first [here](https://pan.baidu.com/s/1LsECpFOxh30O3vHWow8OGQ).
+Download the trained model first [here](https://pan.baidu.com/s/1LsECpFOxh30O3vHWow8OGQ), passwords: abcd
 ```
 cd imagenet
 python energy_consumption_calculation_on_imagenet.py
